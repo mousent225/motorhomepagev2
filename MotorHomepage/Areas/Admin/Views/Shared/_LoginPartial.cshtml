@@ -1,0 +1,33 @@
+
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+
+<form action="/Admin/Account/Logout" method="post" id="logoutForm" class="navbar-right">
+	
+	<ul class="header-nav header-nav-profile">
+		<li class="dropdown">
+			<a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
+				<img src="@User.GetSpecificClaim("Avatar")" alt="" />
+				<span class="profile-info">
+					@User.GetSpecificClaim("FullName")
+					<small>@User.GetSpecificClaim("Roles")</small>
+				</span>
+			</a>
+			<ul class="dropdown-menu animation-dock">
+				<li class="dropdown-header">Config</li>
+				<li><a href="../../html/pages/profile.html">My profile</a></li>
+				@*<li><a href="../../html/pages/blog/post.html">My blog <span class="badge style-danger pull-right">16</span></a></li>
+					<li><a href="../../html/pages/calendar.html">My appointments</a></li>*@
+				<li class="divider"></li>
+				@*<li><a href="../../html/pages/locked.html"><i class="fa fa-fw fa-lock"></i> Lock</a></li>*@
+				<li>
+					<button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+					@*<a href="../../html/pages/login.html"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a>*@
+				</li>
+			</ul><!--end .dropdown-menu -->
+		</li><!--end .dropdown -->
+	</ul><!--end .header-nav-profile -->
+</form>
+@*}*@
